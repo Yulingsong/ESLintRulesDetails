@@ -142,7 +142,9 @@ module.exports = {
         //"no-else-return":"error"
 
         //"no-empty-function":"error"
-        "no-empty-function":["error", { "allow": ["arrowFunctions"] }]
+        //"no-empty-function":["error", { "allow": ["arrowFunctions"] }]
+
+        //到no-eq-null为止,开始在js中直接使用规则来测试。方便
     }
 
 
