@@ -24,5 +24,32 @@ console.log(boundGetName());      // "ESLint"
 */
 //箭头函数不能通过使用 bind() 设置它们的自己 this 值。此规则把所有使用bind() 的箭头函数标记为是有问题的。
 
+/*eslint no-extra-bind: "error"*/
+/*eslint-env es6*/
+
+var x = function () {
+    foo();
+}.bind(bar);
+
+var x = (() => {
+    foo();
+}).bind(bar);
+
+var x = (() => {
+    this.foo();
+}).bind(bar);
+
+var x = function () {
+    (function () {
+        this.foo();
+    }());
+}.bind(bar);
+
+var x = function () {
+    function foo() {
+        this.bar();
+    }
+}.bind(baz);
+
 
 
